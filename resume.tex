@@ -124,7 +124,7 @@
 	\information{\url{http://www.twitter.com/devinsnyder}}{pic}{$\mathcal{T}$}\\%
 }
 \positionedbox{right}{0.29\textwidth}{%
-	\IfFileExists{me.png}{\write18{rm me.png}}{\write18{wget -O me.png http://www.gravatar.com/avatar/ca062712ea52ebcfe2f1ee362aa9dc55.png?s=200}}%
+	{\write18{wget -N -O me.png http://www.gravatar.com/avatar/ca062712ea52ebcfe2f1ee362aa9dc55.png?s=200}}%
 	\includegraphics[scale=.4]{me.png}%
 }
 
