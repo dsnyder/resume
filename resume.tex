@@ -35,7 +35,7 @@
 \usepackage{wasysym}
 \usepackage{enumitem}
 \usepackage{setspace}
-\usepackage{graphicx}
+\usepackage[pdftex]{graphicx}
 \usepackage{hyperref}
 
 % Optionally remove page numbers:
@@ -43,6 +43,10 @@
 
 % No indent and increased paragraph spacing
 \setlength{\parindent}{0pt}
+
+\pdfminorversion=5
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
 
 % Configure margins:
 \geometry{top=2.5cm,bottom=2.5cm,left=3.5cm,right=3.5cm}
@@ -100,6 +104,9 @@
 % \cvcompany{Name}{Position}{Date}{URL}: A new company in the experience section
 \newcommand{\cvcompany}[4]{\textbf{\href{#4}{#1}}\hspace{\stretch{3}}{(#3)}\\\textit{#2}}
 
+% \cvcert{Name}{Date}: A Certification entry
+\newcommand{\cvcert}[2]{#1\hspace{\stretch{2}}{(#2)}}
+
 % \cvsublevel{Text}: Create an indented item list
 \newcommand{\cvsublevel}[1]{\begin{itemize}[leftmargin=0.5cm] #1\end{itemize}}
 
@@ -120,6 +127,7 @@
 \positionedbox{left}{0.7\textwidth}{%
 	\information{(585) 490 - 6575}{pic}{\Telefon}\\%
 	\information{\href{mailto:devinsnyder@gmail.com}{devinsnyder@gmail.com}}{pic}{\MVAt}\\%
+	\information{\url{http://dsnyder.github.io}}{pic}{\Info}\\%
 	\information{\url{http://www.github.com/dsnyder}}{pic}{\Flatsteel}\\%
 	\information{\url{http://www.twitter.com/devinsnyder}}{pic}{$\mathcal{T}$}\\%
 }
@@ -134,47 +142,67 @@
 % Contents Go Here
 
 % Personal Statement
-To be written.
+Hard working Software Engineer that loves working on things which make the world a better place. Seeking a dedicated and passionate team that takes pride in their work to which I can contribute towards. I love learning new technology and taking on new challenges.
 
 % Skill set
 \cvsectiontitle{Skills}
 \positionedbox{left}{0.6\textwidth}{
-\cvskill{Java}{full}
-\cvskill{C, SQL, Apache Cassandra, Web Services, Linux}{semi}
+\cvskill{Java, CSS, HTML, JSP}{full}
+\cvskill{SQL, Apache Cassandra, JavaScript, JQuery, Dojo}{semi}
 }
 \positionedbox{left}{0.4\textwidth}{
-\cvskill{Ruby, Erlang}{none}
+\box
 }
-%\\[0.4cm]
-%[\textbf{StuffIKnow}] \LaTeX, Tool, AnotherTool\\[0.2cm]
+\\[0.4cm]
+[\textbf{Tools}] git, svn, Maven, Postgres, MySQL, Tomcat, JBoss %\\[0.2cm]
 
 % Work experience. Education can be a similar block
 \cvsectiontitle{Experience}
 \vspace{-0.8cm} % NOTE: There are spacing issues, not sure why, fix them with some vspace
 \begin{itemize}[leftmargin=0.5cm]
-\item \cvcompany{CUBRC, Inc.}{Software Engineer}{2012 - Present}{http://www.cubrc.org/}\cvsublevel{%
-	\cvsubbullet{Command and Control applications}%
+\item \cvcompany{TechFlow, Inc.}{Application Developer}{Mar. 2013 - Present}{http://www.techflow.com/}\cvsublevel{%
+	\cvsubbullet{Software Developer for the User Experience Team}%
+	\cvsubbullet{Redesigned and implemented the new \href{https://portal.fas.gsa.gov/web/guest}{GSA ASSIST} website}%
 	}
-\item \cvcompany{Space and Naval Warfare Systems Center, Pacific}{Computer Scientist}{2009 - 2012}{http://www.spawar.navy.mil/sandiego/}\cvsublevel{%
-	\cvsubbullet{Command and Control applications}%
+\item \cvcompany{CUBRC, Inc.}{Software Engineer}{Aug. 2012 - Mar. 2013}{http://www.cubrc.org/}\cvsublevel{%
+	\cvsubbullet{Software Developer for IntellEx, a component for the \href{http://www.onr.navy.mil/Media-Center/Fact-Sheets/C2RPC.aspx}{Command and Control Rapid Prototyping Capability} (C2RPC)}%
+	\cvsubbullet{Clearance : Secret}%
+	}
+\item \cvcompany{Space and Naval Warfare Systems Center, Pacific}{Computer Scientist}{Jul. 2009 - Aug. 2012}{http://www.spawar.navy.mil/sandiego/}\cvsublevel{%
+	\cvsubbullet{Lead Government Software Developer for the  \href{http://www.moesol.com/projects/open-track-manager}{Open Track Manager} (OTM), a primary component for the \href{http://www.onr.navy.mil/Media-Center/Fact-Sheets/C2RPC.aspx}{Command and Control Rapid Prototyping Capability} (C2RPC)} 
+	\cvsubbullet{Lead Software Developer for the Future Movement Service}%
+	\cvsubbullet{Clearance : Secret}%
 	}
 \end{itemize}
 
 % Work experience. Education can be a similar block
 \cvsectiontitle{Education}
 \vspace{-0.8cm} % NOTE: There are spacing issues, not sure why, fix them with some vspace
+\item \cvcompany{University of Rochester}{B.S. in Mathematics\\B.A. in Computer Science}{2006 - 2009}{http://www.rochester.edu/}\cvsublevel{%
+\cvsubbullet GPA 3.57
+}
+\item \cvcompany{Monroe Community College}{A.A in Liberal Arts}{2003 - 2006}{http://www.monroecc.edu/}\cvsublevel{%
+\cvsubbullet GPA 3.92
+}
+\end{itemize}
+
+% Certifications
+\cvsectiontitle{Certifications}
+\vspace{-0.8cm} % NOTE: There are spacing issues, not sure why, fix them with some vspace
 \begin{itemize}[leftmargin=0.5cm]
-\item \cvcompany{University of California, San Diego}{M.S. in Computer Science}{2012 - Present}{http://www.ucsd.edu/}
-\item \cvcompany{University of Rochester}{B.S. in Mathematics\\B.A. in Computer Science}{2006 - 2009}{http://www.rochester.edu/}
-\item \cvcompany{Monroe Community College}{A.A in Liberal Arts}{2003 - 2006}{http://www.monroecc.edu/}
+\item \cvcert{Oracle Certified Professional, Java SE 6 Programmer (SCJP, OCPJP)}{Oct. 2013}
+\item \cvcert{Windows Server® 2008 Active Directory, Configuration}{Feb. 2012}
+\item \cvcert{Windows Server® 2008 Network Infrastructure, Configuration}{Jan. 2012}
+\item \cvcert{Windows® 7, Configuration}{Oct. 2011}
+\item \cvcert{CompTIA Security+}{Jul. 2011}
 \end{itemize}
 
 % Personal information, hobbies etc
-\cvsectiontitle{About Me}
-Loves sailing, coffee and video games. I hail from the city of garbage plates.
+%\cvsectiontitle{About Me}
+%I love sailing, coffee and video games. 
 
 % Personal References
-\cvsectiontitle{References}
-[REDACTED]
+%\cvsectiontitle{References}
+%[REDACTED]
 
 \end{document}
