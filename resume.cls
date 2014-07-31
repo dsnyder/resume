@@ -1,4 +1,4 @@
-\ProvidesClass{resume-me}
+\ProvidesClass{resume}
 
 \LoadClass[10pt]{article}
 % Depends on:
